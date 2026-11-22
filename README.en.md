@@ -39,6 +39,8 @@ Install the Xcode Command Line Tools with `xcode-select --install`, then run the
 ./build.sh
 ```
 
+If you have multiple SDKs installed, set `WEBBIE_SDK_PATH` to the SDK that matches your Swift toolchain.
+
 ## About
 
 Built by [Rayn](https://github.com/raynpan316-cyber). Share feedback in [Issues](https://github.com/raynpan316-cyber/webbie/issues) or follow my build-in-public updates on [Xiaohongshu](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) and [X](https://x.com/raynpann).

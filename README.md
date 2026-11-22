@@ -39,6 +39,8 @@
 ./build.sh
 ```
 
+如果安装了多个 SDK，可以用 `WEBBIE_SDK_PATH` 指定与当前 Swift 工具链匹配的 SDK。
+
 ## 关于
 
 由 [Rayn](https://github.com/raynpan316-cyber) 开发。欢迎在 [Issues](https://github.com/raynpan316-cyber/webbie/issues) 分享反馈，也可以在 [小红书](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) 和 [X](https://x.com/raynpann) 关注 Build in Public 更新。

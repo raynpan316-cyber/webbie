@@ -39,6 +39,8 @@ YouTube、Bilibili、TikTok、抖音、小紅書などの動画リンクを解�
 ./build.sh
 ```
 
+複数の SDK がインストールされている場合は、Swift ツールチェーンに対応する SDK を `WEBBIE_SDK_PATH` で指定できます。
+
 ## 開発者
 
 開発は [Rayn](https://github.com/raynpan316-cyber)。フィードバックは [Issues](https://github.com/raynpan316-cyber/webbie/issues) へ。開発の過程や更新情報は [小紅書](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) と [X](https://x.com/raynpann) で共有しています。
