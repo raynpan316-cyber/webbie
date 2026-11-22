@@ -35,7 +35,17 @@ YouTube、Bilibili、TikTok、抖音、小紅書などのリンクを読み込�
    ```
 
 2. [Releases](https://github.com/raynpan316-cyber/webbie/releases) から `Webbie-macOS-arm64.zip` をダウンロードします。展開した `Webbie.app` を「アプリケーション」に移動します。
-3. リリース版は ad hoc 署名を使用しており、Apple の公証を受けていません。初回起動がブロックされた場合は、入手元を確認し、[Apple の手順](https://support.apple.com/ja-jp/102445)に従って「システム設定 → プライバシーとセキュリティ」で開いてください。
+3. Finder の「アプリケーション」フォルダで Webbie をダブルクリックします。
+
+### 初回起動がブロックされたとき
+
+リリース版は ad hoc 署名を使用しており、Apple の公証を受けていません。このリポジトリの [GitHub Releases](https://github.com/raynpan316-cyber/webbie/releases) からダウンロードしたことを確認してから、以下の手順で開きます。
+
+1. 警告ダイアログの **「完了」** をクリックします。
+2. **「システム設定」→「プライバシーとセキュリティ」** を開き、**「セキュリティ」** までスクロールします。Webbie の **「このまま開く」** をクリックします。
+3. 次のダイアログで **「開く」** をクリックします。以降はダブルクリックで起動できます。
+
+「このまま開く」が表示されない場合は、Finder で `Webbie.app` をもう一度ダブルクリックし、すぐにシステム設定に戻って確認してください。[Apple サポート](https://support.apple.com/ja-jp/102445)
 
 ## ソースからビルド
 

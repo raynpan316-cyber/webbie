@@ -35,7 +35,17 @@ Webbie 可尝试解析 YouTube、B 站、TikTok、抖音、小红书等平台的
    ```
 
 2. 从 [Releases](https://github.com/raynpan316-cyber/webbie/releases) 下载 `Webbie-macOS-arm64.zip`。解压后，把 `Webbie.app` 移到「应用程序」。
-3. 发布包使用 ad hoc 签名，尚未经过 Apple 公证。如果 macOS 拦截首次打开，确认文件来自本仓库后，按 [Apple 的说明](https://support.apple.com/zh-cn/102445)在「系统设置 → 隐私与安全性」中允许打开。
+3. 在访达的「应用程序」文件夹里双击 Webbie。
+
+### 首次打开时提示「未打开 Webbie」
+
+发布包使用 ad hoc 签名，尚未经过 Apple 公证。确认这份 `Webbie.app` 来自本仓库的 [GitHub Releases](https://github.com/raynpan316-cyber/webbie/releases) 后，可以这样打开。
+
+1. 在弹窗左下角点 **「完成」**。
+2. 打开 **系统设置 → 隐私与安全性**，往下滚到 **「安全性」**，找到 Webbie，点 **「仍要打开」**。
+3. 在下一次弹窗点 **「打开」**。macOS 会记住这次放行，以后可以直接双击。
+
+如果没看到「仍要打开」，回访达再双击一次 `Webbie.app`，然后马上回到设置查看。[Apple 官方说明](https://support.apple.com/zh-cn/102445)
 
 ## 从源码构建
 

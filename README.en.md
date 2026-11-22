@@ -35,7 +35,17 @@ Requires an **Apple silicon Mac** running **macOS 14 or later**.
    ```
 
 2. Download `Webbie-macOS-arm64.zip` from [Releases](https://github.com/raynpan316-cyber/webbie/releases). Unzip it and move `Webbie.app` to Applications.
-3. The release uses an ad hoc signature and hasn’t been notarized by Apple. If macOS blocks the first launch, confirm the file came from this repo and follow [Apple’s instructions](https://support.apple.com/en-us/102445) in System Settings → Privacy & Security.
+3. In Finder, open Applications and double-click Webbie.
+
+### If macOS blocks Webbie the first time
+
+This release uses an ad hoc signature and hasn’t been notarized by Apple. Make sure your copy came from this repository’s [GitHub Releases](https://github.com/raynpan316-cyber/webbie/releases) before following these steps.
+
+1. Click **Done** in the alert.
+2. Go to **System Settings → Privacy & Security** and scroll down to **Security**. Find Webbie and click **Open Anyway**.
+3. Click **Open** in the next dialog. macOS remembers the exception, so you can double-click Webbie the next time.
+
+If **Open Anyway** is missing, double-click `Webbie.app` in Finder again, then return to System Settings right away. [Apple Support](https://support.apple.com/en-us/102445)
 
 ## Build from source
 
