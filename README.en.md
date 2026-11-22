@@ -16,11 +16,11 @@ I used to download the whole thing, drop it into my editor, and find the timecod
 
 ![Webbie’s workspace with the 00:00:00 to 00:00:30 range selected, export formats, and the download queue](docs/workspace.png)
 
-## Put it to work in your next edit
+## YouTube downloads by use case
 
-- **The sound bite starts at twelve minutes in.** Set `00:12:40 → 00:13:10` and export those 30 seconds. There’s a first-three-minutes preset if you need more of the intro.
-- **You only need the voice.** Choose MP3 or M4A and an audio bitrate. You can select a time range for audio, too.
-- **You’ve found several sources.** Queue them in one place. Set the resolution and video bitrate for MP4, retry jobs from history, or download the full source when you need it.
+- **YouTube Clip Downloader.** Set `00:12:40 → 00:13:10` to save a 30-second sound bite, or use the first-three-minutes preset to grab an intro.
+- **YouTube Video Downloader.** Choose **Full media**, then pick an available resolution and video bitrate. Queue multiple sources and retry failed jobs from history.
+- **YouTube MP4 Download / YouTube MP3 Download.** Save video as MP4 or extract audio as MP3 or M4A at your chosen bitrate. Set start and end times when you only need part of the audio.
 
 Webbie can try links from YouTube, Bilibili, TikTok, Douyin, Xiaohongshu, and other sites. Available formats, quality, and clip downloads depend on the source, the specific link, and yt-dlp support. Downloads and history stay on your Mac. Settings offers Simplified Chinese, English, and Japanese.
 
