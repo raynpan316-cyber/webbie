@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="Webbie spider">
+  <path d="M44 43 L34 32 L30 18 M40 47 L26 41 L14 32 M40 53 L24 56 L10 65 M43 59 L30 68 L23 82 M56 43 L66 32 L70 18 M60 47 L74 41 L86 32 M60 53 L76 56 L90 65 M57 59 L70 68 L77 82" fill="none" stroke="#111111" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50 39 C57 39 64 46 64 54 C64 61 58 68 50 72 C42 68 36 61 36 54 C36 46 43 39 50 39 Z" fill="#111111"/>
+  <circle cx="50" cy="29" r="6" fill="#111111"/>
+</svg>
