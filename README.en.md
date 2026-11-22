@@ -1,48 +1,54 @@
-<p align="center"><img src="docs/logo.svg" width="72" alt="Webbie"></p>
-
-# Webbie
+# <img src="docs/logo.svg" width="28" alt=""> Webbie
 
 [简体中文](README.md) · **English** · [日本語](README.ja.md)
 
-A macOS download workspace for video creators. Need one minute from an hour-long video? Paste the link, set the start and end times, and save just that clip to your Mac.
+> The video is an hour long. I need the first 30 seconds for my edit.
 
-[**Download for macOS**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [Build from source](#build-from-source)
+I used to download the whole thing, drop it into my editor, and find the timecode I’d already written down. After doing that enough times, I built **Webbie**, a Mac app for downloading video and audio by time range.
 
-![The Webbie workspace with clip times, export settings, and the download queue](docs/workspace.png)
+[**Download Webbie for macOS**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [Installation](#install) · [Build from source](#build-from-source)
 
-## What you can do
+## Save the first 30 seconds
 
-- Download a full video or set a clip range. Use the first 30 seconds or first 3 minutes as a preset.
-- Export MP4 with your choice of available resolution and video bitrate, or extract audio as MP3 or M4A at a selected bitrate.
-- Queue downloads, retry jobs, browse your history, and reveal exported files in Finder.
-- Switch between Simplified Chinese, English, and Japanese in Settings. Downloads are processed and tracked locally.
+1. **Paste a link.** Add a video URL to the workspace and click **Analyze link**.
+2. **Pick a range.** Choose **Clip** and click **First 30 sec**. For a clip from the middle, enter your own start and end times.
+3. **Save it to your Mac.** Choose MP4 and an available resolution, then add it to the queue. When it’s ready, click **Finder** by the job to reveal the file.
 
-Webbie can attempt to parse media links from YouTube, Bilibili, TikTok, Douyin, Xiaohongshu, and more. Available formats, quality options, and clip ranges depend on the source, the link, and yt-dlp support.
+![Webbie’s workspace with the 00:00:00 to 00:00:30 range selected, export formats, and the download queue](docs/workspace.png)
+
+## Put it to work in your next edit
+
+- **The sound bite starts at twelve minutes in.** Set `00:12:40 → 00:13:10` and export those 30 seconds. There’s a first-three-minutes preset if you need more of the intro.
+- **You only need the voice.** Choose MP3 or M4A and an audio bitrate. You can select a time range for audio, too.
+- **You’ve found several sources.** Queue them in one place. Set the resolution and video bitrate for MP4, retry jobs from history, or download the full source when you need it.
+
+Webbie can try links from YouTube, Bilibili, TikTok, Douyin, Xiaohongshu, and other sites. Available formats, quality, and clip downloads depend on the source, the specific link, and yt-dlp support. Downloads and history stay on your Mac. Settings offers Simplified Chinese, English, and Japanese.
 
 ## Install
 
-1. Use a Mac with Apple silicon and macOS 14 or later.
-2. Install [Homebrew](https://brew.sh/), then install the download tools in Terminal.
+Requires an **Apple silicon Mac** running **macOS 14 or later**.
+
+1. Install [Homebrew](https://brew.sh/) and run the command below in Terminal.
 
    ```bash
    brew install yt-dlp ffmpeg deno
    ```
 
-3. Download `Webbie-macOS-arm64.zip` from [Releases](https://github.com/raynpan316-cyber/webbie/releases), unzip it, and move `Webbie.app` to Applications.
-4. The release is ad hoc signed and has yet to be notarized by Apple. If macOS blocks it on first launch, verify that it came from this repository and follow [Apple’s instructions](https://support.apple.com/en-us/102445) in System Settings → Privacy & Security.
+2. Download `Webbie-macOS-arm64.zip` from [Releases](https://github.com/raynpan316-cyber/webbie/releases). Unzip it and move `Webbie.app` to Applications.
+3. The release uses an ad hoc signature and hasn’t been notarized by Apple. If macOS blocks the first launch, confirm the file came from this repo and follow [Apple’s instructions](https://support.apple.com/en-us/102445) in System Settings → Privacy & Security.
 
 ## Build from source
 
-Install the Xcode Command Line Tools with `xcode-select --install`, then run the command below from the repository root. The app builds to `build/Webbie.app` and uses the download tools installed above.
+Install the Xcode Command Line Tools with `xcode-select --install` and run the command below from the repo root.
 
 ```bash
 ./build.sh
 ```
 
-If you have multiple SDKs installed, set `WEBBIE_SDK_PATH` to the SDK that matches your Swift toolchain.
+You’ll find the app at `build/Webbie.app`. It uses the download tools installed above. If you have several SDKs, use `WEBBIE_SDK_PATH` to select the one that matches your Swift toolchain.
 
-## About
+## Follow along
 
-Built by [Rayn](https://github.com/raynpan316-cyber). Share feedback in [Issues](https://github.com/raynpan316-cyber/webbie/issues) or follow my build-in-public updates on [Xiaohongshu](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) and [X](https://x.com/raynpann).
+I’m [Rayn](https://github.com/raynpan316-cyber). If Webbie saves you a step, a ⭐ is always welcome. I’d also love to hear how you collect footage in [Issues](https://github.com/raynpan316-cyber/webbie/issues). I share the build and updates on [Xiaohongshu](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) and [X](https://x.com/raynpann).
 
-Webbie’s source is available under the [MIT license](LICENSE). [yt-dlp](https://github.com/yt-dlp/yt-dlp), [FFmpeg](https://ffmpeg.org/), and [Deno](https://github.com/denoland/deno) are installed separately through Homebrew and carry their own licenses.
+Webbie’s source uses the [MIT license](LICENSE). [yt-dlp](https://github.com/yt-dlp/yt-dlp), [FFmpeg](https://ffmpeg.org/), and [Deno](https://github.com/denoland/deno) are installed separately through Homebrew and have their own licenses.

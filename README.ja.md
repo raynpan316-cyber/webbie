@@ -1,48 +1,54 @@
-<p align="center"><img src="docs/logo.svg" width="72" alt="Webbie"></p>
-
-# Webbie
+# <img src="docs/logo.svg" width="28" alt=""> Webbie
 
 [简体中文](README.md) · [English](README.en.md) · **日本語**
 
-動画クリエイター向けの macOS 素材ダウンロードツール。1 時間の動画から 1 分だけ使いたいときは、リンクを貼り付け、開始時刻と終了時刻を指定して、その区間を Mac に保存できます。
+> 1 時間の動画。編集に使うのは冒頭の 30 秒だけ。
 
-[**macOS 版をダウンロード**](https://github.com/raynpan316-cyber/webbie/releases/latest)
+以前は動画を丸ごとダウンロードして、編集ソフトに入れてから、メモしておいた時間を探していました。この作業を何度も繰り返すうちに、欲しい区間の動画や音声をダウンロードできる Mac アプリ **Webbie** を自分で作りました。
 
-![時間範囲、書き出し形式、ダウンロードキューを表示する Webbie の作業画面](docs/workspace.png)
+[**macOS 版をダウンロード**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [インストール](#インストール) · [ソースからビルド](#ソースからビルド)
 
-## 主な機能
+## 冒頭の 30 秒を保存する
 
-- 動画全体を保存するか、開始・終了時刻を指定します。冒頭 30 秒と 3 分のプリセットもあります。
-- MP4 動画の解像度とビットレートを選べます。音声はビットレートを指定して MP3 または M4A で書き出せます。
-- ダウンロードをキューに追加して、履歴の確認や再試行ができます。保存済みのファイルは Finder で表示できます。
-- 設定から簡体字中国語、英語、日本語に切り替えられます。ダウンロードの処理と履歴の保存は Mac 上で行います。
+1. **リンクを貼る。** 作業画面に動画の URL を貼って「リンクを解析」を押します。
+2. **区間を選ぶ。** 「範囲を指定」に切り替え、「最初の30秒」を選びます。途中から切り出すときは、開始時刻と終了時刻を入力します。
+3. **Mac に保存する。** MP4 と利用可能な解像度を選び、キューに追加します。完了したら、タスクの横にある **Finder** から保存先を開けます。
 
-YouTube、Bilibili、TikTok、抖音、小紅書などの動画リンクを解析できます。利用できる形式、画質、時間範囲はリンク先や yt-dlp の対応状況によって異なります。
+![00:00:00 から 00:00:30 までの区間、書き出し形式、ダウンロードキューを表示する Webbie の作業画面](docs/workspace.png)
+
+## 次の編集ではこんな使い方も
+
+- **使いたい発言は 12 分過ぎ。** `00:12:40 → 00:13:10` と入力して、その 30 秒を書き出します。冒頭を長めに取りたいときは、最初の 3 分を選べます。
+- **声だけを使いたい。** MP3 または M4A を選び、音声のビットレートを指定します。音声だけでも時間範囲を指定できます。
+- **素材がいくつも見つかった。** まとめてキューに追加します。MP4 では解像度とビットレートを選べます。履歴から再試行したり、ファイル全体をダウンロードしたりすることもできます。
+
+YouTube、Bilibili、TikTok、抖音、小紅書などのリンクを読み込めます。利用できる形式や画質、区間指定の可否は、リンク先や yt-dlp の対応状況によって変わります。ダウンロード処理と履歴の保存は Mac 上で行います。設定で簡体字中国語、英語、日本語を切り替えられます。
 
 ## インストール
 
-1. macOS 14 以降を搭載した Apple シリコンの Mac を使用してください。
-2. [Homebrew](https://brew.sh/) をインストールし、ターミナルでダウンロード用のツールを追加します。
+**Apple シリコン搭載の Mac** と **macOS 14 以降**が必要です。
+
+1. [Homebrew](https://brew.sh/) をインストールし、ターミナルで次のコマンドを実行します。
 
    ```bash
    brew install yt-dlp ffmpeg deno
    ```
 
-3. [Releases](https://github.com/raynpan316-cyber/webbie/releases) から `Webbie-macOS-arm64.zip` をダウンロードし、展開した `Webbie.app` を「アプリケーション」に移動します。
-4. リリース版は ad hoc 署名を使用しており、Apple の公証を受けていません。初回起動がブロックされた場合は、ファイルの入手元を確認し、[Apple の手順](https://support.apple.com/ja-jp/102445)に従って「システム設定 → プライバシーとセキュリティ」で開いてください。
+2. [Releases](https://github.com/raynpan316-cyber/webbie/releases) から `Webbie-macOS-arm64.zip` をダウンロードします。展開した `Webbie.app` を「アプリケーション」に移動します。
+3. リリース版は ad hoc 署名を使用しており、Apple の公証を受けていません。初回起動がブロックされた場合は、入手元を確認し、[Apple の手順](https://support.apple.com/ja-jp/102445)に従って「システム設定 → プライバシーとセキュリティ」で開いてください。
 
 ## ソースからビルド
 
-`xcode-select --install` で Xcode Command Line Tools をインストールし、リポジトリのルートで次のコマンドを実行します。アプリは `build/Webbie.app` に生成され、上記のダウンロード用ツールを使用します。
+`xcode-select --install` で Xcode Command Line Tools をインストールし、リポジトリのルートで次のコマンドを実行します。
 
 ```bash
 ./build.sh
 ```
 
-複数の SDK がインストールされている場合は、Swift ツールチェーンに対応する SDK を `WEBBIE_SDK_PATH` で指定できます。
+アプリは `build/Webbie.app` に生成され、上記のダウンロード用ツールを使用します。SDK が複数ある場合は、Swift ツールチェーンに対応する SDK を `WEBBIE_SDK_PATH` で指定できます。
 
-## 開発者
+## 開発のようす
 
-開発は [Rayn](https://github.com/raynpan316-cyber)。フィードバックは [Issues](https://github.com/raynpan316-cyber/webbie/issues) へ。開発の過程や更新情報は [小紅書](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) と [X](https://x.com/raynpann) で共有しています。
+開発者の [Rayn](https://github.com/raynpan316-cyber) です。Webbie でひと手間減らせたら、⭐ を付けてもらえるとうれしいです。普段どんなふうに素材を集めているか、[Issues](https://github.com/raynpan316-cyber/webbie/issues) でも教えてください。開発の過程や更新は [小紅書](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) と [X](https://x.com/raynpann) で公開しています。
 
-Webbie のソースコードは [MIT ライセンス](LICENSE)のもとで公開しています。[yt-dlp](https://github.com/yt-dlp/yt-dlp)、[FFmpeg](https://ffmpeg.org/)、[Deno](https://github.com/denoland/deno) は Homebrew で個別にインストールされ、それぞれのライセンスが適用されます。
+Webbie のソースコードは [MIT ライセンス](LICENSE)で公開しています。[yt-dlp](https://github.com/yt-dlp/yt-dlp)、[FFmpeg](https://ffmpeg.org/)、[Deno](https://github.com/denoland/deno) は Homebrew で個別にインストールされ、それぞれ独自のライセンスが適用されます。

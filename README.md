@@ -1,48 +1,54 @@
-<p align="center"><img src="docs/logo.svg" width="72" alt="Webbie"></p>
-
-# Webbie
+# <img src="docs/logo.svg" width="28" alt=""> Webbie
 
 **简体中文** · [English](README.en.md) · [日本語](README.ja.md)
 
-给剪辑创作者用的 macOS 素材下载工作台。一小时的原片只需要一分钟？粘贴链接，选好起止时间，把需要的那一段直接存到 Mac。
+> 一小时的视频，我剪片只用前 30 秒。
 
-[**下载 macOS 版**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [从源码构建](#从源码构建)
+以前我得把整条视频下载下来，拖进剪辑软件，再去找早就记好的时间点。这个流程做多了，我就给自己做了 **Webbie**，一个能按时间段下载视频和音频的 macOS 工作台。
 
-![Webbie 工作台，显示时间段、导出格式和下载队列](docs/workspace.png)
+[**下载 Webbie for macOS**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [安装指南](#安装) · [从源码构建](#从源码构建)
 
-## 你可以用它做什么
+## 把前 30 秒存下来
 
-- 下载完整素材，或指定开始和结束时间。常用的前 30 秒和前 3 分钟可以一键填入。
-- 导出 MP4 视频并选择可用的分辨率和视频码率，或导出 MP3 / M4A 音频并选择音频码率。
-- 排队下载、重试任务、查看记录，并在访达中定位已导出的文件。
-- 在「设置」切换简体中文、英文或日文。下载处理和记录保存在本机。
+1. **贴链接。** 把视频链接粘到工作台，点击「解析链接」。
+2. **圈出要的部分。** 选「指定片段」，点「前 30 秒」。要取中间一段，就自己填起止时间。
+3. **存到 Mac。** 选 MP4 和可用画质，加入下载队列。完成后，点任务旁的 **Finder** 就能找到成品。
 
-可尝试解析 YouTube、B 站、TikTok、抖音、小红书等平台的视频链接。实际可用的格式、画质和时间段取决于源站、链接及 yt-dlp 的支持情况。
+![Webbie 工作台中选中 00:00:00 到 00:00:30，并显示 MP4、音频格式和下载任务](docs/workspace.png)
+
+## 剪片时还能这样用
+
+- **访谈里听见一句能用的。** 填 `00:12:40 → 00:13:10`，就能导出那 30 秒。想留足开头的上下文，也可以用「前 3 分钟」预设。
+- **画面不需要，声音要留。** 选 MP3 或 M4A，再选音频码率。只取某句对白时，同样可以指定片段。
+- **手上有好几个素材。** 把任务放进同一个队列。视频可选分辨率和码率，任务失败后可从记录里重试，也能切回「完整素材」下载。
+
+Webbie 可尝试解析 YouTube、B 站、TikTok、抖音、小红书等平台的链接。实际可用的画质、格式和片段下载能力随源站与具体链接而变，也受 yt-dlp 支持情况影响。下载和记录都在 Mac 上处理，界面可在「设置」中切换简体中文、英文和日文。
 
 ## 安装
 
-1. 使用搭载 Apple 芯片且运行 macOS 14 或更新版本的 Mac。
-2. 安装 [Homebrew](https://brew.sh/)，然后在终端安装下载工具。
+需要 **Apple 芯片的 Mac** 和 **macOS 14 或更新版本**。
+
+1. 安装 [Homebrew](https://brew.sh/)，然后在终端安装下载组件。
 
    ```bash
    brew install yt-dlp ffmpeg deno
    ```
 
-3. 从 [Releases](https://github.com/raynpan316-cyber/webbie/releases) 下载 `Webbie-macOS-arm64.zip`，解压并将 `Webbie.app` 移到「应用程序」。
-4. 发布包使用临时签名，尚未经过 Apple 公证。如果 macOS 拦截首次打开，可在确认文件来自本仓库后，按 [Apple 的说明](https://support.apple.com/zh-cn/102445)在「系统设置 → 隐私与安全性」中允许打开。
+2. 从 [Releases](https://github.com/raynpan316-cyber/webbie/releases) 下载 `Webbie-macOS-arm64.zip`。解压后，把 `Webbie.app` 移到「应用程序」。
+3. 发布包使用 ad hoc 签名，尚未经过 Apple 公证。如果 macOS 拦截首次打开，确认文件来自本仓库后，按 [Apple 的说明](https://support.apple.com/zh-cn/102445)在「系统设置 → 隐私与安全性」中允许打开。
 
 ## 从源码构建
 
-安装 Xcode 命令行工具（`xcode-select --install`），在仓库目录执行以下命令。生成的应用位于 `build/Webbie.app`，下载功能使用上一步安装的工具。
+用 `xcode-select --install` 安装 Xcode 命令行工具，再到仓库根目录运行下面的命令。
 
 ```bash
 ./build.sh
 ```
 
-如果安装了多个 SDK，可以用 `WEBBIE_SDK_PATH` 指定与当前 Swift 工具链匹配的 SDK。
+应用生成在 `build/Webbie.app`，使用前面安装的下载组件。如果装了多个 SDK，可用 `WEBBIE_SDK_PATH` 指定和 Swift 工具链匹配的 SDK。
 
-## 关于
+## Build in Public
 
-由 [Rayn](https://github.com/raynpan316-cyber) 开发。欢迎在 [Issues](https://github.com/raynpan316-cyber/webbie/issues) 分享反馈，也可以在 [小红书](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) 和 [X](https://x.com/raynpann) 关注 Build in Public 更新。
+我是 [Rayn](https://github.com/raynpan316-cyber)。如果 Webbie 帮你少做了一道工序，欢迎点个 ⭐。你也可以在 [Issues](https://github.com/raynpan316-cyber/webbie/issues) 说说你平时怎样找素材。开发过程和更新会发在 [小红书](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) 和 [X](https://x.com/raynpann)。
 
-Webbie 源码使用 [MIT 许可证](LICENSE)。[yt-dlp](https://github.com/yt-dlp/yt-dlp)、[FFmpeg](https://ffmpeg.org/) 和 [Deno](https://github.com/denoland/deno) 通过 Homebrew 单独安装，分别适用各自的许可证。
+Webbie 源码采用 [MIT 许可证](LICENSE)。[yt-dlp](https://github.com/yt-dlp/yt-dlp)、[FFmpeg](https://ffmpeg.org/) 和 [Deno](https://github.com/denoland/deno) 通过 Homebrew 单独安装，适用各自的许可证。
