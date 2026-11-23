@@ -2,27 +2,33 @@
 
 [简体中文](README.md) · **English** · [日本語](README.ja.md)
 
-> The video is an hour long. I need the first 30 seconds for my edit.
+> The YouTube interview is an hour long. I need the 30 seconds from 12:40 to 13:10.
 
-I used to download the whole thing, drop it into my editor, and find the timecode I’d already written down. After doing that enough times, I built **Webbie**, a Mac app for downloading video and audio by time range.
+I’ve already written down where the quote starts and ends. With a web downloader that only saves full videos, I still have to wait for the whole interview, drop it into my editor, and find the same line again. I end up keeping an hour-long file on disk for a single sound bite.
+
+I built **Webbie**, a Mac download workspace for video creators. Paste the interview link, analyze it, choose **Clip**, and enter the two timecodes to save just those 30 seconds. Export MP4 for the video and sound, or choose MP3 or M4A for the audio alone.
 
 [**Download Webbie for macOS**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [Installation](#install) · [Build from source](#build-from-source)
 
-## Save the first 30 seconds
+## Save those 30 seconds from the interview
 
 1. **Paste a link.** Add a video URL to the workspace and click **Analyze link**.
-2. **Pick a range.** Choose **Clip** and click **First 30 sec**. For a clip from the middle, enter your own start and end times.
+2. **Pick a range.** Choose **Clip**, set the start to `00:12:40`, and set the end to `00:13:10`.
 3. **Save it to your Mac.** Choose MP4 and an available resolution, then add it to the queue. When it’s ready, click **Finder** by the job to reveal the file.
 
 ![Webbie’s workspace with the 00:00:00 to 00:00:30 range selected, export formats, and the download queue](docs/workspace.png)
 
+*The screenshot shows the **First 30 sec** preset. The same fields take custom start and end times.*
+
 ## YouTube downloads by use case
 
-- **YouTube Clip Downloader.** Set `00:12:40 → 00:13:10` to save a 30-second sound bite, or use the first-three-minutes preset to grab an intro.
+- **YouTube Clip Downloader.** Use **First 30 sec** or **First 3 min** for an intro. Enter your own timecodes to save a shot or a line of dialogue from the middle.
 - **YouTube Video Downloader.** Choose **Full media**, then pick an available resolution and video bitrate. Queue multiple sources and retry failed jobs from history.
 - **YouTube MP4 Download / YouTube MP3 Download.** Save video as MP4 or extract audio as MP3 or M4A at your chosen bitrate. Set start and end times when you only need part of the audio.
 
 Webbie can try links from YouTube, Bilibili, TikTok, Douyin, Xiaohongshu, and other sites. Available formats, quality, and clip downloads depend on the source, the specific link, and yt-dlp support. Downloads and history stay on your Mac. Settings offers Simplified Chinese, English, and Japanese.
+
+Looking for an interview quote, B-roll, or original audio, or troubleshooting a download on your Mac? [Browse video download use cases and common questions](docs/video-download-use-cases.md)
 
 ## Install
 
