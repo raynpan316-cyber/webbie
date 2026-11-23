@@ -4,9 +4,9 @@
 
 > The YouTube interview is an hour long. I need the 30 seconds from 12:40 to 13:10.
 
-I’ve already written down where the quote starts and ends. With a web downloader that only saves full videos, I still have to wait for the whole interview, drop it into my editor, and find the same line again. I end up keeping an hour-long file on disk for a single sound bite.
+I only need a 30-seconds clip of a 1-hour long YouTube video. Normal YouTube Video downloaders only saves full videos, I still have to wait for the whole video to be downloaded, drop it into my editor, and edit it. I end up keeping an hour-long file on disk for a single sound bite.
 
-I built **Webbie**, a Mac download workspace for video creators. Paste the interview link, analyze it, choose **Clip**, and enter the two timecodes to save just those 30 seconds. Export MP4 for the video and sound, or choose MP3 or M4A for the audio alone.
+I built **Webbie**, a Mac download workspace for video creators. Paste the video link, analyze it, choose **Clip**, and enter the two timecodes to save just those 30 seconds. Export MP4 for the video and sound, or choose MP3 or M4A for the audio alone.
 
 [**Download Webbie for macOS**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [Installation](#install) · [Build from source](#build-from-source)
 
