@@ -26,16 +26,10 @@ Webbie can try links from YouTube, Bilibili, TikTok, Douyin, Xiaohongshu, and ot
 
 ## Install
 
-Requires an **Apple silicon Mac** running **macOS 14 or later**.
+Requires an **Apple silicon Mac** running **macOS 14 or later**. Starting with v1.5.3, the GitHub download includes the tools it needs. You can run Webbie without installing Homebrew.
 
-1. Install [Homebrew](https://brew.sh/) and run the command below in Terminal.
-
-   ```bash
-   brew install yt-dlp ffmpeg deno
-   ```
-
-2. Download `Webbie-macOS-arm64.zip` from [Releases](https://github.com/raynpan316-cyber/webbie/releases). Unzip it and move `Webbie.app` to Applications.
-3. In Finder, open Applications and double-click Webbie.
+1. Download `Webbie-macOS-arm64.zip` from the [latest release](https://github.com/raynpan316-cyber/webbie/releases/latest). Unzip it and move `Webbie.app` to Applications.
+2. In Finder, open Applications and double-click Webbie.
 
 ### If macOS blocks Webbie the first time
 
@@ -55,10 +49,10 @@ Install the Xcode Command Line Tools with `xcode-select --install` and run the c
 ./build.sh
 ```
 
-You’ll find the app at `build/Webbie.app`. It uses the download tools installed above. If you have several SDKs, use `WEBBIE_SDK_PATH` to select the one that matches your Swift toolchain.
+You’ll find the app at `build/Webbie.app`. For a development build, install external tools with `brew install yt-dlp ffmpeg deno`. See [bundled runtime instructions](docs/runtime.md) to build a self-contained release. If you have several SDKs, use `WEBBIE_SDK_PATH` to select the one that matches your Swift toolchain.
 
 ## Follow along
 
 I’m [Rayn](https://github.com/raynpan316-cyber). If Webbie saves you a step, a ⭐ is always welcome. I’d also love to hear how you collect footage in [Issues](https://github.com/raynpan316-cyber/webbie/issues). I share the build and updates on [Xiaohongshu](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) and [X](https://x.com/raynpann).
 
-Webbie’s source uses the [MIT license](LICENSE). [yt-dlp](https://github.com/yt-dlp/yt-dlp), [FFmpeg](https://ffmpeg.org/), and [Deno](https://github.com/denoland/deno) are installed separately through Homebrew and have their own licenses.
+Webbie’s source uses the [MIT license](LICENSE). The separate bundled tools retain their own licenses. [Third-party tools and source code](docs/runtime.md)

@@ -26,16 +26,10 @@ YouTube、Bilibili、TikTok、抖音、小紅書などのリンクを読み込�
 
 ## インストール
 
-**Apple シリコン搭載の Mac** と **macOS 14 以降**が必要です。
+**Apple シリコン搭載の Mac** と **macOS 14 以降**が必要です。v1.5.3 以降の GitHub リリースにはダウンロード用ツールが同梱されており、Homebrew のインストールは不要です。
 
-1. [Homebrew](https://brew.sh/) をインストールし、ターミナルで次のコマンドを実行します。
-
-   ```bash
-   brew install yt-dlp ffmpeg deno
-   ```
-
-2. [Releases](https://github.com/raynpan316-cyber/webbie/releases) から `Webbie-macOS-arm64.zip` をダウンロードします。展開した `Webbie.app` を「アプリケーション」に移動します。
-3. Finder の「アプリケーション」フォルダで Webbie をダブルクリックします。
+1. [最新リリース](https://github.com/raynpan316-cyber/webbie/releases/latest)から `Webbie-macOS-arm64.zip` をダウンロードします。展開した `Webbie.app` を「アプリケーション」に移動します。
+2. Finder の「アプリケーション」フォルダで Webbie をダブルクリックします。
 
 ### 初回起動がブロックされたとき
 
@@ -55,10 +49,10 @@ YouTube、Bilibili、TikTok、抖音、小紅書などのリンクを読み込�
 ./build.sh
 ```
 
-アプリは `build/Webbie.app` に生成され、上記のダウンロード用ツールを使用します。SDK が複数ある場合は、Swift ツールチェーンに対応する SDK を `WEBBIE_SDK_PATH` で指定できます。
+アプリは `build/Webbie.app` に生成されます。開発版の外部ツールは `brew install yt-dlp ffmpeg deno` でインストールできます。ツールを同梱する場合は[ランタイムのビルド手順](docs/runtime.md)をご覧ください。SDK が複数ある場合は、Swift ツールチェーンに対応する SDK を `WEBBIE_SDK_PATH` で指定できます。
 
 ## 開発のようす
 
 開発者の [Rayn](https://github.com/raynpan316-cyber) です。Webbie でひと手間減らせたら、⭐ を付けてもらえるとうれしいです。普段どんなふうに素材を集めているか、[Issues](https://github.com/raynpan316-cyber/webbie/issues) でも教えてください。開発の過程や更新は [小紅書](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) と [X](https://x.com/raynpann) で公開しています。
 
-Webbie のソースコードは [MIT ライセンス](LICENSE)で公開しています。[yt-dlp](https://github.com/yt-dlp/yt-dlp)、[FFmpeg](https://ffmpeg.org/)、[Deno](https://github.com/denoland/deno) は Homebrew で個別にインストールされ、それぞれ独自のライセンスが適用されます。
+Webbie のソースコードは [MIT ライセンス](LICENSE)で公開しています。同梱の各ツールには個別のライセンスが適用されます。[サードパーティ製ツールとソースコード](docs/runtime.md)

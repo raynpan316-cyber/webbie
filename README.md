@@ -26,16 +26,10 @@ Webbie 可尝试解析 YouTube、B 站、TikTok、抖音、小红书等平台的
 
 ## 安装
 
-需要 **Apple 芯片的 Mac** 和 **macOS 14 或更新版本**。
+需要 **Apple 芯片的 Mac** 和 **macOS 14 或更新版本**。v1.5.3 起，GitHub 安装包自带下载组件，解压后可直接使用，无需安装 Homebrew。
 
-1. 安装 [Homebrew](https://brew.sh/)，然后在终端安装下载组件。
-
-   ```bash
-   brew install yt-dlp ffmpeg deno
-   ```
-
-2. 从 [Releases](https://github.com/raynpan316-cyber/webbie/releases) 下载 `Webbie-macOS-arm64.zip`。解压后，把 `Webbie.app` 移到「应用程序」。
-3. 在访达的「应用程序」文件夹里双击 Webbie。
+1. 从 [Releases](https://github.com/raynpan316-cyber/webbie/releases/latest) 下载 `Webbie-macOS-arm64.zip`。解压后，把 `Webbie.app` 移到「应用程序」。
+2. 在访达的「应用程序」文件夹里双击 Webbie。
 
 ### 首次打开时提示「未打开 Webbie」
 
@@ -55,10 +49,10 @@ Webbie 可尝试解析 YouTube、B 站、TikTok、抖音、小红书等平台的
 ./build.sh
 ```
 
-应用生成在 `build/Webbie.app`，使用前面安装的下载组件。如果装了多个 SDK，可用 `WEBBIE_SDK_PATH` 指定和 Swift 工具链匹配的 SDK。
+应用生成在 `build/Webbie.app`。开发构建可以用 `brew install yt-dlp ffmpeg deno` 安装外部组件。要构建自带组件的发布包，见 [运行时打包说明](docs/runtime.md)。如果装了多个 SDK，可用 `WEBBIE_SDK_PATH` 指定和 Swift 工具链匹配的 SDK。
 
 ## Build in Public
 
 我是 [Rayn](https://github.com/raynpan316-cyber)。如果 Webbie 帮你少做了一道工序，欢迎点个 ⭐。你也可以在 [Issues](https://github.com/raynpan316-cyber/webbie/issues) 说说你平时怎样找素材。开发过程和更新会发在 [小红书](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) 和 [X](https://x.com/raynpann)。
 
-Webbie 源码采用 [MIT 许可证](LICENSE)。[yt-dlp](https://github.com/yt-dlp/yt-dlp)、[FFmpeg](https://ffmpeg.org/) 和 [Deno](https://github.com/denoland/deno) 通过 Homebrew 单独安装，适用各自的许可证。
+Webbie 源码采用 [MIT 许可证](LICENSE)。发布包中的独立下载工具按各自许可证分发。[第三方组件与源码](docs/runtime.md)

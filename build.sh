@@ -12,6 +12,19 @@ app="$stage/Webbie.app"
 resources="$app/Contents/Resources"
 mkdir -p "$app/Contents/MacOS" "$resources"
 
+if [[ -n "${WEBBIE_RUNTIME_DIR:-}" ]]; then
+    runtime="$(cd "$WEBBIE_RUNTIME_DIR" && pwd)"
+    for component in yt-dlp ffmpeg ffprobe deno; do
+        if [[ ! -x "$runtime/$component" ]]; then
+            printf 'Bundled runtime is missing %s.\n' "$component" >&2
+            exit 1
+        fi
+    done
+    test -d "$runtime/Licenses"
+    ditto "$runtime" "$resources/Runtime"
+    cp docs/runtime.md "$resources/ThirdParty.md"
+fi
+
 xcrun swiftc -sdk "$sdk" -O -target arm64-apple-macosx14.0 \
     -module-cache-path "$build/module-cache" \
     -Xcc "-fmodules-cache-path=$build/module-cache" \

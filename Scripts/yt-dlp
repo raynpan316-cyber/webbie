@@ -1,0 +1,5 @@
+#!/bin/sh
+set -eu
+
+runtime="$(cd "$(/usr/bin/dirname "$0")" && pwd)"
+exec "$runtime/python/bin/python3" -I -B "$runtime/yt-dlp.pyz" "$@"
