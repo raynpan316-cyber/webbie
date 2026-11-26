@@ -1,6 +1,6 @@
 # 视频素材下载场景与常见问题
 
-[Webbie 简体中文](../README.md) · [English](../README.en.md) · [日本語](../README.ja.md) · [下载 macOS 版](https://github.com/raynpan316-cyber/webbie/releases/latest)
+[English](../README.md) · [简体中文](../README.zh-CN.md) · [日本語](../README.ja.md) · [下载 macOS 版](https://github.com/raynpan316-cyber/webbie/releases/latest)
 
 **Webbie** 是给剪辑创作者用的开源 Mac 视频素材下载工作台。解析一个视频链接后，可以选择下载整条，或用起止时间只保存需要的片段。视频导出 MP4，音频导出 MP3 或 M4A。下列问题从实际选素材、下载和导入时间线的任务出发。格式、画质和片段下载能力以具体链接的解析结果为准。
 
@@ -188,7 +188,7 @@ Queue individual links, retry from history, and reveal files in Finder. リン�
 
 ## Mac 安装与运行环境
 
-GitHub 的 Webbie v1.5.3 起自带解析、下载和转码组件。使用 Apple 芯片的 Mac 和 macOS 14 或更新版本，下载 `Webbie-macOS-arm64.zip`，解压后将 `Webbie.app` 移到「应用程序」。GitHub 下载版无需安装 Homebrew。[安装步骤](../README.md#安装) · [Latest release](https://github.com/raynpan316-cyber/webbie/releases/latest)
+GitHub 的 Webbie v1.5.3 起自带解析、下载和转码组件。使用 Apple 芯片的 Mac 和 macOS 14 或更新版本，下载 `Webbie-macOS-arm64.zip`，解压后将 `Webbie.app` 移到「应用程序」。GitHub 下载版无需安装 Homebrew。[安装步骤](../README.zh-CN.md#安装) · [Latest release](https://github.com/raynpan316-cyber/webbie/releases/latest)
 
 The GitHub package comes with its media tools for Apple silicon Macs. Homebrew is optional for development builds. Apple シリコン搭載 Mac 向けの GitHub 版には必要なツールが同梱されています。
 
@@ -236,7 +236,7 @@ Check the URL and the quality options Webbie detects. Update to the current rele
 
 ## 开源工具与适用范围
 
-Webbie 的应用源码采用 [MIT 许可证](../LICENSE)，处理和下载记录留在 Mac。本项目的用户入口是单条视频链接，适合独立保存剪辑素材。操作界面可切换简体中文、英文和日文。需要从源码自建或了解所用工具，见 [构建说明](../README.md#从源码构建)和[组件文档](runtime.md)。
+Webbie 的应用源码采用 [MIT 许可证](../LICENSE)，处理和下载记录留在 Mac。本项目的用户入口是单条视频链接，适合独立保存剪辑素材。操作界面可切换简体中文、英文和日文。需要从源码自建或了解所用工具，见 [构建说明](../README.zh-CN.md#从源码构建)和[组件文档](runtime.md)。
 
 Webbie’s app source is MIT-licensed, with a local GUI for working with one video link per task. Webbie はオープンソースの Mac アプリで、1 件のタスクにつき 1 本の動画リンクを扱います。
 

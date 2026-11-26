@@ -1,64 +1,68 @@
 # <img src="docs/logo.svg" width="28" alt=""> Webbie
 
-**简体中文** · [English](README.en.md) · [日本語](README.ja.md)
+**English** · [简体中文](README.zh-CN.md) · [日本語](README.ja.md)
 
-> 一小时的 YouTube 访谈，我只想下载 12:40 到 13:10 的那 30 秒。
+> The YouTube interview is an hour long. I need the 30 seconds from 12:40 to 13:10.
 
-剪片找素材时，我只需要全片里30秒钟的素材。可遇到只支持整条下载的网页版工具，还是得等一小时的视频下完，再拖进剪辑软件，把那句话重新找一遍。最后只用一句，整条原片却已经占了硬盘。
+I only need a 30-seconds clip of a 1-hour long YouTube video. Normal YouTube Video downloaders only saves full videos, I still have to wait for the whole video to be downloaded, drop it into my editor, and edit it. I end up keeping an hour-long file on disk for a single sound bite.
 
-我做了 **Webbie**，一个给剪辑创作者用的 Mac 素材下载工作台。贴上需要下载的视频素材链接，解析后选「指定片段」，填好起止时间，就能把这 30 秒单独存下来。要画面和声音就导出 MP4，只要这句的声音就导出 MP3 或 M4A。
+I built **Webbie**, a Mac download workspace for video creators. Paste the video link, analyze it, choose **Clip**, and enter the two timecodes to save just those 30 seconds. Export MP4 for the video and sound, or choose MP3 or M4A for the audio alone.
 
-[**下载 Webbie for macOS**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [安装指南](#安装) · [从源码构建](#从源码构建)
+[**Download Webbie for macOS**](https://github.com/raynpan316-cyber/webbie/releases/latest) · [Installation](#install) · [Build from source](#build-from-source)
 
-## 把访谈里的这 30 秒存下来
+## Save those 30 seconds from the interview
 
-1. **贴链接。** 把视频链接粘到工作台，点击「解析链接」。
-2. **圈出要的部分。** 选「指定片段」，开始填 `00:12:40`，结束填 `00:13:10`。
-3. **存到 Mac。** 选 MP4 和可用画质，加入下载队列。完成后，点任务旁的 **Finder** 就能找到成品。
+1. **Paste a link.** Add a video URL to the workspace and click **Analyze link**.
+2. **Pick a range.** Choose **Clip**, set the start to `00:12:40`, and set the end to `00:13:10`.
+3. **Save it to your Mac.** Choose MP4 and an available resolution, then add it to the queue. When it’s ready, click **Finder** by the job to reveal the file.
 
-![Webbie 工作台中选中 00:00:00 到 00:00:30，并显示 MP4、音频格式和下载任务](docs/workspace.png)
+![Webbie’s workspace with the 00:00:00 to 00:00:30 range selected, export formats, and the download queue](docs/workspace-en.png)
 
-*截图演示的是「前 30 秒」预设，同一个面板也可以手动输入中间片段的起止时间。*
+*The screenshot shows the **First 30 sec** preset. The same fields take custom start and end times.*
 
-## YouTube 下载场景
+## YouTube downloads by use case
 
-- **YouTube Clip Downloader（按时间段下载 YouTube 片段）** · 要留节目开场，可以直接用「前 30 秒」或「前 3 分钟」预设。要取中段的画面或台词，输入自己的起止时间。
-- **YouTube Video Downloader（下载完整 YouTube 视频）** · 选「完整素材」和可用的分辨率、视频码率。多个素材可以加入同一个队列，失败的任务能从下载记录重试。
-- **YouTube MP4 Download / YouTube MP3 Download** · 下载 MP4 视频，或提取 MP3、M4A 音频并选择音频码率。只要一段对白时，音频也可以按起止时间导出。
+- **YouTube Clip Downloader.** Use **First 30 sec** or **First 3 min** for an intro. Enter your own timecodes to save a shot or a line of dialogue from the middle.
+- **YouTube Video Downloader.** Choose **Full media**, then pick an available resolution and video bitrate. Queue multiple sources and retry failed jobs from history.
+- **YouTube MP4 Download / YouTube MP3 Download.** Save video as MP4 or extract audio as MP3 or M4A at your chosen bitrate. Set start and end times when you only need part of the audio.
 
-Webbie 可尝试解析 YouTube、B 站、TikTok、抖音、小红书等平台的链接。实际可用的画质、格式和片段下载能力随源站与具体链接而变，也受 yt-dlp 支持情况影响。下载和记录都在 Mac 上处理，界面可在「设置」中切换简体中文、英文和日文。
+Webbie can try links from YouTube, Bilibili, TikTok, Douyin, Xiaohongshu, and other sites. Available formats, quality, and clip downloads depend on the source, the specific link, and yt-dlp support. Downloads and history stay on your Mac. Settings offers Simplified Chinese, English, and Japanese.
 
-想找访谈金句、B-roll、视频原声，或者排查 Mac 上的下载问题？[查看素材下载场景和常见问法](docs/video-download-use-cases.md)
+Looking for an interview quote, B-roll, or original audio, or troubleshooting a download on your Mac? [Browse video download use cases and common questions](docs/video-download-use-cases.md)
 
-## 安装
+<a name="安装"></a>
 
-需要 **Apple 芯片的 Mac** 和 **macOS 14 或更新版本**。v1.5.3 起，GitHub 安装包自带下载组件，解压后可直接使用，无需安装 Homebrew。
+## Install
 
-1. 从 [Releases](https://github.com/raynpan316-cyber/webbie/releases/latest) 下载 `Webbie-macOS-arm64.zip`。解压后，把 `Webbie.app` 移到「应用程序」。
-2. 在访达的「应用程序」文件夹里双击 Webbie。
+[中文安装指南](README.zh-CN.md#安装) · [日本語のインストール手順](README.ja.md#インストール)
 
-### 首次打开时提示「未打开 Webbie」
+Requires an **Apple silicon Mac** running **macOS 14 or later**. Starting with v1.5.3, the GitHub download includes the tools it needs. You can run Webbie without installing Homebrew.
 
-发布包使用 ad hoc 签名，尚未经过 Apple 公证。确认这份 `Webbie.app` 来自本仓库的 [GitHub Releases](https://github.com/raynpan316-cyber/webbie/releases) 后，可以这样打开。
+1. Download `Webbie-macOS-arm64.zip` from the [latest release](https://github.com/raynpan316-cyber/webbie/releases/latest). Unzip it and move `Webbie.app` to Applications.
+2. In Finder, open Applications and double-click Webbie.
 
-1. 在弹窗左下角点 **「完成」**。
-2. 打开 **系统设置 → 隐私与安全性**，往下滚到 **「安全性」**，找到 Webbie，点 **「仍要打开」**。
-3. 在下一次弹窗点 **「打开」**。macOS 会记住这次放行，以后可以直接双击。
+### If macOS blocks Webbie the first time
 
-如果没看到「仍要打开」，回访达再双击一次 `Webbie.app`，然后马上回到设置查看。[Apple 官方说明](https://support.apple.com/zh-cn/102445)
+This release uses an ad hoc signature and hasn’t been notarized by Apple. Make sure your copy came from this repository’s [GitHub Releases](https://github.com/raynpan316-cyber/webbie/releases) before following these steps.
 
-## 从源码构建
+1. Click **Done** in the alert.
+2. Go to **System Settings → Privacy & Security** and scroll down to **Security**. Find Webbie and click **Open Anyway**.
+3. Click **Open** in the next dialog. macOS remembers the exception, so you can double-click Webbie the next time.
 
-用 `xcode-select --install` 安装 Xcode 命令行工具，再到仓库根目录运行下面的命令。
+If **Open Anyway** is missing, double-click `Webbie.app` in Finder again, then return to System Settings right away. [Apple Support](https://support.apple.com/en-us/102445)
+
+## Build from source
+
+Install the Xcode Command Line Tools with `xcode-select --install` and run the command below from the repo root.
 
 ```bash
 ./build.sh
 ```
 
-应用生成在 `build/Webbie.app`。开发构建可以用 `brew install yt-dlp ffmpeg deno` 安装外部组件。要构建自带组件的发布包，见 [运行时打包说明](docs/runtime.md)。如果装了多个 SDK，可用 `WEBBIE_SDK_PATH` 指定和 Swift 工具链匹配的 SDK。
+You’ll find the app at `build/Webbie.app`. For a development build, install external tools with `brew install yt-dlp ffmpeg deno`. See [bundled runtime instructions](docs/runtime.md) to build a self-contained release. If you have several SDKs, use `WEBBIE_SDK_PATH` to select the one that matches your Swift toolchain.
 
-## Build in Public
+## Follow along
 
-我是 [Rayn](https://github.com/raynpan316-cyber)。如果 Webbie 帮你少做了一道工序，欢迎点个 ⭐。你也可以在 [Issues](https://github.com/raynpan316-cyber/webbie/issues) 说说你平时怎样找素材。开发过程和更新会发在 [小红书](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) 和 [X](https://x.com/raynpann)。
+I’m [Rayn](https://github.com/raynpan316-cyber). If Webbie saves you a step, a ⭐ is always welcome. I’d also love to hear how you collect footage in [Issues](https://github.com/raynpan316-cyber/webbie/issues). I share the build and updates on [Xiaohongshu](https://www.xiaohongshu.com/user/profile/5edcdd31000000000101cbdb) and [X](https://x.com/raynpann).
 
-Webbie 源码采用 [MIT 许可证](LICENSE)。发布包中的独立下载工具按各自许可证分发。[第三方组件与源码](docs/runtime.md)
+Webbie’s source uses the [MIT license](LICENSE). The separate bundled tools retain their own licenses. [Third-party tools and source code](docs/runtime.md)
